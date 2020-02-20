@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Aux from '../../hoc/Auxiliarily';
 import classes from './Layout.css';
 
