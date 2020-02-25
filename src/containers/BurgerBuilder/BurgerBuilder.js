@@ -27,7 +27,7 @@ class BurgerBuilder extends Component {
     purchasing: false
   };
 
-  purchaseHandler() {
+  purchaseHandler = () => {                       // If tied to an event, this will not be bound to a class
     this.setState({purchasing: true});
   }
 
