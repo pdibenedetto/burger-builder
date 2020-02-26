@@ -1,5 +1,6 @@
 import React from 'react';
 import Aux from '../../../hoc/Auxiliarily';
+import BurgerBuilder from "../../../containers/BurgerBuilder/BurgerBuilder";
 
 const orderSummary = (props) => {
   const ingredientSummary = Object.keys(props.ingredients)
@@ -20,6 +21,8 @@ const orderSummary = (props) => {
         {ingredientSummary}
       </ul>
       <p>Continue to Checkout</p>
+      <button>CANCEL</button>
+      <button>CONTINUE</button>
     </Aux>
   )
 };
