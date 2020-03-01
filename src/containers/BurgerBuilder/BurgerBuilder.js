@@ -29,11 +29,15 @@ class BurgerBuilder extends Component {
 
   purchaseHandler = () => {                       // If tied to an event, this will not be bound to a class
     this.setState({purchasing: true});
-  }
+  };
 
-  purchaseCancelHandler =() => {
+  purchaseCancelHandler = () => {
     this.setState({purchasing: false});
-  }
+  };
+
+  purchaseContinueHandler = () => {
+
+  };
 
   updatePurchasable (ingredients) {
     const sum = Object.keys(ingredients)
@@ -93,8 +97,15 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-          <OrderSummary ingredients={this.state.ingredients}/>
+        <Modal show={this.state.purchasing}
+               modalClosed={this.purchaseCancelHandler}
+        >
+          <OrderSummary
+              ingredients={this.state.ingredients}
+              price={this.state.totalPrice}
+              purchaseCancelled={this.purchaseCancelHandler}
+              purchaseContinued={this.purchaseContinueHandler}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients}/>
         <BuildControls disabled={disabledInfo}
